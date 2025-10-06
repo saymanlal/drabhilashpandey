@@ -17,7 +17,6 @@ const GALLERY_IMAGES = [
   "/gallery/8.jpg",
 ];
 
-// Notifications array
 const NOTIFICATIONS = [
   { text: "Rozgaar Mahotsav 2.O — Register Here", href: "/rmt" },
   { text: "Rozgaar Mahotsav 2.O — Register Here", href: "/rmt" },
@@ -38,7 +37,6 @@ export default function Home() {
   const [animated, setAnimated] = useState(false);
   const galleryRef = useRef<HTMLElement | null>(null);
 
-  // Trigger landing section animation
   useEffect(() => {
     const onVisible = () => setAnimated(true);
     if (document.readyState === "complete") onVisible();
@@ -46,7 +44,6 @@ export default function Home() {
     return () => window.removeEventListener("load", onVisible);
   }, []);
 
-  // Gallery intersection observer
   useEffect(() => {
     if (!galleryRef.current) return;
     const el = galleryRef.current;
@@ -74,9 +71,11 @@ export default function Home() {
             <div className="flex items-center justify-between h-16 px-4">
               <div className="flex items-center gap-3">
                 <div className="w-12 h-12 rounded-full overflow-hidden flex-shrink-0 border-2 border-[#FF9933] shadow-md">
-                  <img
+                  <Image
                     src={DEFAULT_PHOTO}
                     alt="MP"
+                    width={48}
+                    height={48}
                     className="object-cover w-full h-full"
                   />
                 </div>
@@ -90,7 +89,6 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Desktop nav */}
               <div className="hidden md:flex items-center gap-6">
                 {NAV_LINKS.map((item) => (
                   <Link
@@ -103,7 +101,6 @@ export default function Home() {
                 ))}
               </div>
 
-              {/* Mobile menu button */}
               <div className="flex items-center md:hidden">
                 <button
                   aria-label="open menu"
@@ -176,7 +173,7 @@ export default function Home() {
             <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight">
               Dr. Abhilash Pandey
             </h1>
-            <p className="text-lg sm:text-xl text-gray-700">"Neta Nahi, Beta Hai"</p>
+            <p className="text-lg sm:text-xl text-gray-700">&quot;Neta Nahi, Beta Hai&quot;</p>
 
             <div className="flex flex-wrap gap-4 mt-6 justify-center md:justify-start">
               <Link
@@ -222,11 +219,13 @@ export default function Home() {
               key={idx}
               className="rounded-2xl overflow-hidden bg-white shadow-md hover:shadow-xl hover:scale-105 transition-transform duration-500 relative group"
             >
-              <img
+              <Image
                 src={src}
                 alt={`gallery-${idx}`}
-                loading="lazy"
+                width={400}
+                height={240}
                 className="w-full h-60 object-cover"
+                priority
               />
               <figcaption className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 flex items-center justify-center text-white font-semibold transition-opacity">
                 Event {idx + 1}
@@ -271,7 +270,6 @@ export default function Home() {
           animation: marquee 20s linear infinite;
         }
 
-        /* Pause animation when hovering anywhere inside the marquee */
         .marquee:hover {
           animation-play-state: paused;
         }
