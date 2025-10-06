@@ -180,7 +180,7 @@ export default function Home() {
                 href="#contact"
                 className="px-5 py-3 rounded-md bg-[#FF9933] text-white font-medium shadow hover:opacity-95"
               >
-                Seva Ka Mauka De
+                Seva Ka Mauka Dein
               </Link>
               <Link
                 href="#gallery"
