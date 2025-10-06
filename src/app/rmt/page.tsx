@@ -95,7 +95,7 @@ export default function Home() {
 
           {/* Glassmorphism box for date & venue */}
           <div className="mt-4 px-6 py-2 bg-white/20 backdrop-blur-md rounded-lg border border-white/30 text-gray-900 font-semibold text-lg sm:text-base md:text-lg">
-            📅 Date: 11th October 2025 &nbsp; | &nbsp; 📍 Venue: Shri Ram Engineering College, Jabalpur
+            📅 दिनांक: 14th अक्टूबर 2025 &nbsp; | &nbsp; 📍 स्थान: श्री राम इंजीनियरिंग कॉलेज, जबलपुर
           </div>
         </div>
       </main>
