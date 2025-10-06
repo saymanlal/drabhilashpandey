@@ -8,8 +8,8 @@ export default function Home() {
 
   useEffect(() => {
     let start = 0;
-    const end = 12457;
-    const duration = 2000;
+    const end = 4758;
+    const duration = 4000;
     const increment = end / (duration / 30);
 
     const counter = setInterval(() => {
